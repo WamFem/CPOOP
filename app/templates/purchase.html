@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block title %}
+ purchase page
+{% endblock %}
+
+{% block content %}
+<div class="svg-container">
+    <object id="svg-background" data="{{ url_for('static', filename='images/CPOOP (2).svg') }}" type="image/svg+xml"></object>
+</div>
+
+<div class="icon-links-container">
+    <a href="https://phantom.com/" target="_blank">
+        <img src="{{ url_for('static', filename='images/image1.jfif') }}" alt="phantom Icon" class="icon-link icon-phantom">
+    </a>
+    <a href="https://raydium.io/swap/?inputMint=sol&outputMint=4XJv9vg8w2PZyRoueXZmcdq7DPjETSPCx4NjEhz3pump" target="_blank">
+        <img src="{{ url_for('static', filename='images/image2.jfif') }}" alt="raydium Icon" class="icon-link icon-raydium">
+    </a>
+    <a target="_blank">
+        <img src="{{ url_for('static', filename='images/image3.jfif') }}" alt="raydium Icon" class="icon-extra">
+    </a>
+</div>
+{% endblock %}
+

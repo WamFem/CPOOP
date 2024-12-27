@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <div class="svg-container">
+        <object id="svg-background" data="{{ url_for('static', filename='images/CPOOP.svg') }}" type="image/svg+xml"></object>
+    </div>
+    <div class="button-container">
+        <a href="https://x.com/CPOOPSOL" target="_blank">
+            <img src="{{ url_for('static', filename='images/twitter-x-logo-png-9.png') }}" alt="Twitter Icon" class="twitter-icon" class="twitter-icon:hover">
+        </a>
+    </div>
+    <div class="button2-container">
+        <a href="https://t.me/CPOOPPORTAL" target="_blank">
+            <img src="{{ url_for('static', filename='images/telegram-logo-telegram-icon-transparent-free-png.webp') }}" alt="Telegram Icon" class="telegram-icon">
+        </a>
+    </div>
+    <div class="button3-container">
+        <a href="https://dexscreener.com/" target="_blank">
+            <img src="{{ url_for('static', filename='images/download.png') }}" alt="dexcreener Icon" class="dexcreener-icon">
+        </a>
+    </div>
+    <div class="jiggle-text">
+        CPOOP
+    </div>
+    
+{% endblock %}

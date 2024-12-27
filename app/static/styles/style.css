@@ -1,0 +1,235 @@
+/* Reset margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.navbar {
+    background-color: #B22222; /* Cool Christmas red (firebrick) */
+    font-family: 'More Sugar', sans-serif; /* Change font to More Sugar */
+    color: white; /* Text color for contrast */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border-radius: 10px; /* Smooth edges */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #FFD700; /* Gold on hover for a festive touch */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* SVG container styles */
+.svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    z-index: -2; /* Ensure the background stays behind other elements */
+}
+
+/* Style for the SVG object */
+#svg-background {
+    width: 100%; /* Stretch to full width */
+    height: 100%; /* Stretch to full height */
+    display: block; /* Remove default object padding/margin */
+}
+
+
+.button-container {
+    position: absolute;
+    top: 182px; /* You can adjust this value */
+    left: 44.6%;
+    transform: translateX(-50%);
+}
+
+.twitter-icon {
+    width: 49px; /* Adjust size */
+    height: 49px; /* Adjust size */
+    cursor: pointer;
+    transform: rotate(-8deg); /* Rotate the icon 3 degrees to the left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.twitter-icon:hover {
+    transform: rotate(-8deg) scale(1.2) translateY(-10px); /* Enlarge, move up */
+    box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.8); /* Intense red glow */
+}
+
+
+.button2-container {
+    position: absolute;
+    top: 162px; /* You can adjust this value */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.telegram-icon {
+    width: 85px; /* Adjust size */
+    height: 85px; /* Adjust size */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.telegram-icon:hover {
+    transform: scale(1.2) translateY(-10px); /* Enlarge, move up */
+    box-shadow: 0 0 30px rgba(0, 183, 255, 1), 0 0 60px rgba(0, 183, 255, 0.8); /* Intense blue glow */
+}
+
+.button3-container {
+    position: absolute;
+    top: 185px; /* You can adjust this value */
+    left: 55%;
+    transform: translateX(-50%);
+}
+
+.dexcreener-icon {
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    cursor: pointer;
+    transform: rotate(8deg); /* Rotate the icon 3 degrees to the left */
+    border-radius: 10%; /* Make the icon round */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dexcreener-icon:hover {
+    transform: rotate(8deg) scale(1.2) translateY(-10px); /* Enlarge, move up */
+    box-shadow: 0 0 30px rgba(255, 153, 0, 1), 0 0 60px rgba(255, 153, 0, 0.8); /* Intense orange glow */
+}
+
+
+/* Style for the text */
+.jiggle-text {
+    position: absolute;
+    top: 58px; /* Adjust the distance from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 90px; /* Set the font size to a large value */
+    color: white; /* Set the text color to white */
+    font-family: 'Bangers', sans-serif; /* Choose a font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center;
+    cursor: pointer; /* Change cursor to pointer to indicate it's interactive */
+    transition: transform 0.2s ease; /* Smooth transition */
+}
+
+/* Jiggle effect on hover */
+.jiggle-text:hover {
+    animation: jiggle 0.5s ease infinite;
+}
+
+/* Animation keyframes for the jiggling effect */
+@keyframes jiggle {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    75% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+}
+
+.snow_wrap {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent; /* Optional: Set a plain color or remove this line */
+    z-index: -1;
+}
+
+
+.snowflake {
+    position: absolute;
+    top: -10%; /* Start above the viewport */
+    font-size: 1rem; /* Size of the snowflake */
+    color: white; /* Color of the snowflake */
+    animation: fall linear infinite;
+    z-index: -1;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) translateX(-50px); /* Snowflake falls diagonally */
+        opacity: 0;
+    }
+}
+
+
+.icon-links-container {
+    position: relative; /* Enable positioning of individual icons */
+}
+
+/* Individual icon styling */
+.icon-phantom {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 100px; /* Adjust as needed */
+    width: 50px; /* Adjust size */
+    height: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.icon-raydium {
+    position: absolute;
+    top: 120px; /* Adjust as needed */
+    left: 200px; /* Adjust as needed */
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.icon-extra {
+    position: absolute;
+    top: 200px; /* Adjust as needed */
+    left: 300px; /* Adjust as needed */
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Hover effects for all icons */
+.icon-link:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+

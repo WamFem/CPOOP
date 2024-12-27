@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+      <link href="https://fonts.googleapis.com/css2?family=More+Sugar&display=swap" rel="stylesheet">
+      <title>
+          {% block title %}
+          {% endblock %}
+      </title>
+   </head>
+   <body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">CPOOP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('home_page') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('purchase_page') }}">Purchase</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('disclaimer_page') }}">Disclaimer</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <div class="snow_wrap">
+        <!-- Snowflakes will be dynamically added here -->
+    </div>
+    
+    <script>
+        function createSnowflakes() {
+    const snowWrap = document.querySelector('.snow_wrap');
+    const snowflakeCount = 50; // Number of snowflakes
+
+    for (let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('img');
+        snowflake.classList.add('snowflake');
+        snowflake.src = '../static/images/snowflake.png'; // Path to your snowflake image
+        snowflake.alt = 'Snowflake';
+
+        // Set random size for the snowflakes
+        const size = Math.random() * 20 + 10 + 'px'; // Size between 10px and 30px
+        const left = Math.random() * 100 + 'vw'; // Random position across the screen
+        const duration = Math.random() * 5 + 5 + 's'; // Between 5s and 10s
+
+        snowflake.style.width = size;
+        snowflake.style.height = size;
+        snowflake.style.left = left;
+        snowflake.style.animationDuration = duration;
+
+        snowWrap.appendChild(snowflake);
+
+        // Remove snowflake after animation ends
+        setTimeout(() => snowflake.remove(), parseFloat(duration) * 1000);
+    }
+}
+
+// Call the function to start the snow effect
+setInterval(createSnowflakes, 1000); // Create snowflakes periodically
+createSnowflakes(); // Create initial snowflakes
+
+    </script>
+    
+   
+
+   </body>
+</html>
